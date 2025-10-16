@@ -1,0 +1,176 @@
+:root {
+    --background: linear-gradient(35deg,rgb(6,0,151) 0%,rgb(130,4,255) 73%,rgb(193,15,255) 100%);
+    --darkreader-inline-bgimage: linear-gradient(35deg, var(--darkreader-background-060097, #050079)
+    #050079 0%, var(--darkreader-background-8204ff, #6500ca) 73%, var(--darkreader-background-c10fff, #9100c3) 100%);
+    --darkreader-inline-bgcolor: initial;
+    --color: var(--darkreader-text-f2f5f7c2, rgba(225, 223, 219, 0.76));
+    --white:#fff;
+    --yellow:#ffcd57;
+    --secon-section:#181a1b;
+    --tree-section:#f9f6fe;
+    --text:#67768e;
+        background: linear-gradient(35deg, rgb(6, 0, 151) 0%, rgb(130, 4, 255) 64%, rgb(193, 15, 255) 98%);
+}
+.container-calendar{
+    position: relative;
+    /* height: auto; */
+    background-color:#f9f9f9; 
+     
+}
+.tui-full-calendar-layout {
+  background-color: #f8f9fc !important;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05)
+}
+
+.tui-full-calendar-timegrid-hour {
+  color: #333 !important;
+
+}
+/* .toastui-calendar-panel{
+  height: 100% !important;
+} */
+.tui-full-calendar-weekday-grid-line {
+  border-color: rgba(0, 0, 0, 0.05) !important;
+
+}
+#viewSelect{
+  padding: 8px 12px;
+  border-Radius: 8px;
+  border: 1px solid #ccc;
+  font-Size: 16px;
+  cursor: pointer;
+
+}
+/*  */
+/* .toastui-calendar-layout{
+  border:  2px solid green !important;
+
+} */
+/* También puedes ocultar inputs del popup si existieran */
+.toastui-calendar-section-button {
+  display: none !important;
+
+}
+
+/*  Oculta completamente el panel All Day y sus etiquetas */
+.toastui-calendar-timegrid-allday,
+.toastui-calendar-panel.toastui-calendar-section-allday,
+.toastui-calendar-allday,
+.toastui-calendar-allday-title,
+.toastui-calendar-allday-left,
+.toastui-calendar-allday-right {
+  display: none !important;
+  
+}
+
+/*  Oculta posibles contenedores de tareas o hitos */
+.toastui-calendar-task,
+.toastui-calendar-milestone,
+.toastui-calendar-section-task,
+.toastui-calendar-section-milestone {
+  display: none !important;
+}
+
+/*  Reajusta el alto del calendario para que no quede espacio vacío */
+.toastui-calendar-timegrid {
+  grid-template-rows: 0fr 1fr !important;
+  /* height: auto; */
+
+}
+/* ###########                      ############### */
+.container-calendar-cite{
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+.container-calendar{
+  width: 100%;
+  border-radius: 8px;
+  margin: 15px;
+  box-shadow:0 10px 20px rgb(129, 129, 129);
+
+
+}
+.title-cal{
+  font-size: 35px;
+  text-Align:center;
+  margin-Bottom:20px;
+  background-Color:#fff;
+  padding:10px;
+  border-Radius:10px;
+ 
+}
+/* aside */
+.aside-event {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 999;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.aside-event h3 {
+  margin-bottom: 15px;
+  color: #0078ff;
+}
+
+.aside-event p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  /* font-weight: bold; */
+  text-align: start;
+  padding: 15px;
+}
+.aside-event p strong{
+  font-weight: bold;
+  font-size: 16px;
+
+}
+.aside-event a {
+  color: #0078ff;
+  text-decoration: underline;
+}
+
+.btn-close {
+  background: #0078ff;
+  color: white;
+  border: none;
+  padding: 20px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top:70px;
+  width: 100%;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: transparent;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-content::-webkit-scrollbar{
+  display: none;
+}
+

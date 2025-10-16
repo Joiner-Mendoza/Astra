@@ -1,0 +1,57 @@
+.container-header{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+.container-header nav{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    width: auto;
+    
+}
+/* .container-header nav:nth-child(1){
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+} */
+.container-header nav ul{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 15px 0;
+    flex-direction: row;
+
+}
+.container-header nav ul a{
+    margin: 0 20px;
+    font-size: 20px;
+}
+.container-header nav ul a:hover{
+    cursor: pointer;
+}
+/* Logo */
+.Hero{
+    width: 60px;
+
+}
+#img-Hero{
+    justify-content: center;
+}
+/* redes sociales */
+.social-icons svg {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+  color: #fff   ; 
+}
+
+/* querys */
