@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
 
     #apps locales
-    'appi',
+    # 'appi',
+    "appi.apps.AppiConfig",
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', 
@@ -134,3 +135,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# email_send con un solo remitente
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'         # o la IP donde esté corriendo smtp4dev
+EMAIL_PORT = 25                # puerto por defecto de smtp4dev
+EMAIL_HOST_USER = ''             # smtp4dev no requiere autenticación
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = 'joinerjoel12@gmail.com'
+

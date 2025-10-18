@@ -60,6 +60,7 @@ function Calendary() {
               status: appointment.status,
               platform: appointment.platform,
               link: appointment.link,
+              email: appointment.email
             },
           };
         });
@@ -148,6 +149,7 @@ function Calendary() {
             status: "pending",
             platform: appointment.platform || "Sin plataforma",
             link: appointment.link || "Sin enlace",
+            email:appointment.email || 'Sin email'
           },
         },
       ]);
@@ -165,11 +167,12 @@ function Calendary() {
       title: data.title,
       start: data.start.d.d,
       end: data.end.d.d,
+      email: data.raw?.email,
       status: data.raw?.status,
       platform: data.raw?.platform,
       link: data.raw?.link,
     });
-
+    console.log(data)
     setShowAside(true);
   };
 
@@ -235,7 +238,9 @@ function Calendary() {
           <aside className="aside-event">
             <h3>Detalles de la cita</h3>
             <hr />
-            <p><strong>Título:</strong> {selectedEvent.title}</p>
+            <p><strong>Nombres:</strong> {selectedEvent.title}</p>
+            <hr />
+            <p><strong>Email:</strong> {selectedEvent.email}</p>
             <hr />
             <p><strong>Inicio:</strong> {selectedEvent.start.toLocaleString()}</p>
             <hr />

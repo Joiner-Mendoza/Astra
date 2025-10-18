@@ -37,7 +37,7 @@ function HomePage() {
               <h1>Your Idea Matters!</h1>
               <p>Pulvinar enim ac tortor nulla facilisi tristique facilisi
               elementum sollicitudin eget lorem.</p>
-              <button>Make a website</button>
+              <button onClick={openCalendar}>Make a website</button>
           </div>
 
           <div className="img"> 

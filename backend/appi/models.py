@@ -23,7 +23,7 @@ class Appointment(models.Model):
     time_in = models.TimeField(verbose_name="Hora de ingreso de la cita", null=True, blank=True)
     time_out = models.TimeField(verbose_name="Hora de salida de la cita", null=True, blank=True)
     status = models.CharField(verbose_name="Estado", max_length=10, choices=STATUS_CHOICES, default=PENDING)
-
+    email = models.EmailField(verbose_name="Correo Electrónico", max_length=255, null=True, blank=True)
     platform = models.CharField(max_length=20, choices=PLATFORM_CHOICES)
     link = models.URLField()
 

@@ -8,6 +8,7 @@ function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
   const [link, setLink] = useState("");
   const [startTime, setStartTime] = useState(timeIn || "");
   const [endTime, setEndTime] = useState(timeOut || "");
+  const [ email,setEmail ] = useState('');
 
   useEffect(() => {
     setStartTime(timeIn || "");
@@ -28,6 +29,7 @@ function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
       time_in: startTime,
       time_out: endTime,
       platform,
+      email,
       link,
     };
     try {
@@ -47,14 +49,21 @@ function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
       <div className="modal">
         <h3>Agendar una reunión</h3>
         <form onSubmit={handleSubmit}>
-          <label>Título:</label>
+          <label>Nombres y Apellidos:</label>
           <input
             type="text"
             value={title}
+            placeholder="Ingresa nombres y apellidos"
             onChange={(e) => setTitle(e.target.value)}
             required
           />
-
+          <input
+            type="email"
+            value={email}
+            placeholder="ejemplo@gmial.com"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
           <label>Fecha:</label>
           <input
             type="date"
@@ -80,10 +89,10 @@ function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
           <input
             type="url"
             value={link}
+            placeholder="Se enviara al email"
             onChange={(e) => setLink(e.target.value)}
-            required
+            
           />
-
           <div className="buttons">
             <button type="submit" className="save">
               Guardar
