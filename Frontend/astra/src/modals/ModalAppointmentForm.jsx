@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/ModalAppointmentForm.css";
-
+// swals
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
   const [title, setTitle] = useState("");
   const [platform, setPlatform] = useState("Zoom");
@@ -9,6 +11,8 @@ function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
   const [startTime, setStartTime] = useState(timeIn || "");
   const [endTime, setEndTime] = useState(timeOut || "");
   const [ email,setEmail ] = useState('');
+  // Swal
+  const MySwal = withReactContent(Swal)
 
   useEffect(() => {
     setStartTime(timeIn || "");
@@ -39,6 +43,17 @@ function ModalAppointmentForm({ date, timeIn, timeOut, onClose, onSaved }) {
       );
       console.log(" Cita creada:", response.data);
       onSaved(response.data);
+      // Swals
+      MySwal.fire({
+        title:'Reunion creada',
+        text:`La reunion para el dia ${formattedDate} se ha creado exitosamente hora de entrada:${timeIn} hora de salida:${timeOut}`,
+        icon:'success',
+        confirmButtonText:'Aceptar',
+        // clase personalizada
+        customClass: {
+          popup: "swal-popup-top" 
+        }
+      });
     } catch (error) {
       console.error(" Error al crear la reunión:", error.response?.data || error);
     }

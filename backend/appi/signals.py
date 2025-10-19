@@ -7,13 +7,14 @@ from .models import Appointment
 def send_email_confirmation(sender, instance, created, **kwargs):
     if created: 
         send_mail(
-            subject=f"Cita confirmada: {instance.title}",
+            subject=f"Cita Creada con exito: {instance.title}",
             message=f"""
             Hola, tu cita ha sido agendada:
 
-            Nombres: {instance.title}
+            Nombres: {instance.title}   
             Fecha: {instance.date}
-            Hora: {instance.time_in}
+            Hora de entrada: {instance.time_in}
+            Hora de salida: {instance.time_out}
             Plataforma: {instance.platform}
             Link: {instance.link}
 
@@ -23,4 +24,3 @@ def send_email_confirmation(sender, instance, created, **kwargs):
             recipient_list=[instance.email],
             fail_silently=False,
         )
-        print('Correo exitoso ')
